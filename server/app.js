@@ -197,6 +197,8 @@ app.post('/delete-number',(req,res) => {
     })
 })
 
-app.listen(1010,() => {
+const PORT = process.env.PORT
+
+app.listen(PORT,() => {
 console.log('Server sure is humming!')
 })
