@@ -8,8 +8,8 @@ const jwt = require('jsonwebtoken')
 const fetch = require("node-fetch");
 
 //Twilio requirements:
-const accountSid = 'AC8b1177363239e945df9055f139c63443';
-const authToken = '5d1da33a329f294f71ad443b73df8140';
+const accountSid = '***************';
+const authToken = '****************';
 const client = require('twilio')(accountSid, authToken);
 
 //We need cors so the browser will allow us to interact between sites, otherwise it will flag as a security risk
