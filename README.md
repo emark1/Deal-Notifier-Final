@@ -6,7 +6,7 @@
 
 <h2>Live link:</h2> https://elated-sammet-4cad17.netlify.com/
 
-<h4>**NOTE: Due to the limitations of Twilio trial accounts, texts can only be sent to new phone numbers that have been verified by the account holder. Therefore, testing this software with your phone number is not possible. If you want to test it with your own Twilio account, you need to change the "FROM" phone number in the server code, as well as the accountSID and authToken numbers (also in the server code).</h3>
+<h4>**NOTE: Due to the limitations of Twilio trial accounts, texts can only be sent to new phone numbers if they have been verified by the account holder. Therefore, testing this software with your phone number is not possible unless you add your own Twilio account to the code. If you want to test it with your own Twilio account, you need to change the "FROM" phone number in the server code, as well as the accountSID and authToken numbers (also in the server code).</h3>
 
 This web application accepts a phone number from the user along with a series of preferences for items the user is interested in purchasing. The phone number, along with the item preferences, are stored in a Postgres database. The server will ping the subreddit Build a PC Sales periodically. If a new thread is posted that matches the user's preferences, a text message will be sent to the user with information and a link to the deal. 
 
