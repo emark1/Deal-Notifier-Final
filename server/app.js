@@ -7,9 +7,15 @@ const bodyParser = require('body-parser')
 const jwt = require('jsonwebtoken')
 const fetch = require("node-fetch");
 
+const dotenv = require('dotenv');
+
+dotenv.config({
+  path: './.env'
+})
+
 //Twilio requirements:
-const accountSid = '***************';
-const authToken = '****************';
+const accountSid = process.env.accountSID;
+const authToken = process.env.authToken;
 const client = require('twilio')(accountSid, authToken);
 
 //We need cors so the browser will allow us to interact between sites, otherwise it will flag as a security risk
@@ -110,7 +116,7 @@ function retrieveDatabase(){
 }
 
 // retrieveDatabase()
-setInterval(function(){ retrieveDatabase() },300000);
+setInterval(function(){ retrieveDatabase() },5000);
 
 //****************CHECK DATA****************
 function checkPosts(userPhones) {
@@ -171,7 +177,7 @@ function getBAPCSposts(processedUsers){
 function sendText(title, link, number) {
   client.messages.create({
      body: `Hey, new deal here: ${title} \n ${link}`,
-     from: '+15072487456',
+     from: process.env.phoneNumber,
      to: `+1${number}`
   })
   .then(message => console.log(message.sid));
